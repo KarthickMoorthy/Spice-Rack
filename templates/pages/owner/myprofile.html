@@ -1,0 +1,93 @@
+<div class='container' ng-controller="customerController">
+    <div class='col-md-12' 'col-sm-12' 'col-xs-12'>
+        <div class='fill' >
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <h1>Owner Details</h1>
+                    <p class="pull-right"><sub><b><sup>*</sup>Required fields</b></sub></p>
+                </div>
+                <!-- FORM -->
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form name="customerForm" ng-submit="submitForm(loginForm.$valid,user)" novalidate>
+                    <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                    <!-- NAME -->
+                    <div class="large-12 columns">
+                        <div class="form-group">
+                            <label>Restaurant Name<sup>*</sup></label>
+                            <input type="text" name="fname" class="form-control" ng-model="user.rname" required>
+                            <p ng-show="customerForm.rname.$dirty && customerForm.rname.$error.required" class="help-block">You first name is required.</p>
+                        </div>
+                    </div>
+                    <div class="large-12 columns">
+                        <div class="form-group">
+                            <label>First Name<sup>*</sup></label>
+                            <input type="text" name="fname" class="form-control" ng-model="user.fname" required>
+                            <p ng-show="customerForm.fname.$dirty && customerForm.fname.$error.required" class="help-block">You first name is required.</p>
+                        </div>
+                    </div>
+                    <!-- LAST NAME -->
+                    <div class="large-12 columns">
+                        <div class="form-group">
+                            <label>Last Name<sup>*</sup></label>
+                            <input type="text" name="lname" class="form-control" ng-model="user.lname" required>
+                            <p ng-show="customerForm.lname.$dirty && userForm.lname.$error.required" class="help-block">You last name is required.</p>
+                        </div>
+                    </div>
+                    
+                   
+                    <!-------------- BEST Time to open restaurant ------------------------------------>
+                    <div class="page-header">
+                        <h1>Restaurant Operation Time</h1>
+                    </div>
+                
+                    <div class="large-12 columns">
+                        <label>Time :</label>
+                        <div class="form-group">
+                            <label>Chose your restaurnat operation time<sup>*</sup>:</label>
+                            <select name="time" ng-model="user.time" required>
+                                <option>08-11AM</option>
+                                <option>10AM to 12 PM</option>
+                                <option>10AM to 10 PM</option>
+                                
+                            </select>
+                        </div>  
+                    </div>
+                    <!------- Contact Information --------------->
+                    <div class="page-header">
+                        <h1>Contact Information</h1>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.primaryemail.$invalid && !customerForm.primaryemail.$pristine }">
+                        <label>Primary Email<sup>*</sup></label>
+                        <input type="email" name="emailprimary" class="form-control" ng-model="user.emailprimary" required>
+                        <p ng-show="customerForm.emailprimary.$error.required && customerForm.email.$dirty" class="help-block">Email is required</p>
+                        <p ng-show="customerForm.emailprimary.$error.email" class="help-block">Enter a valid email.</p>
+                    </div>
+                    
+                    <div class="large-12 columns">
+                        <div class="form-group">
+                            <label>Primary Phone Number<sup>*</sup></label>
+                            </br>
+                            <input name="primarynumber" type="number" ng-model="user.primarynumber" placeholder="Phone number....." required>
+                            <p ng-show="customerForm.priamrynumber.$dirty && customerForm.primarynumber.$error.required" class="help-block">You priamry phone number is required.</p>
+                        </div>
+                    </div>
+                    
+
+                   <div class="divider"> </div>
+                   
+                   
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="btn btn-primary" ng-disabled="customerForm.$invalid" ng-click="showme=true">Save</button>
+                    <div class="pull-right">
+                            <input type="button"  class="btn  btn-success jump" value="Continue" align="center" ng-click="mycontinue()"></input>
+                            </div>
+                    <div class="wrapper">
+                   <h3 ng-show="showme"><em>{{msgalert}}</em></h3>
+                  </div> 
+                </form>
+            </div>
+             <div class="col-xs-12" style="height:45px;"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class='container' ng-controller='loginController'>
+    <div class='col-md-12' 'col-sm-12' 'col-xs-12'>
+        <div class='fill'>
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <h1>Login Form</h1>
+                    <p class="pull-right"><sub><b><sup>*</sup>Required fields</b></sub></p>
+                </div>
+                <!-- FORM -->
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form name="loginForm" ng-submit="submitForm(loginForm.$valid,give)" novalidate>
+                    <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }">
+                        <label>Email<sup>*</sup></label>
+                        <input type="email" name="email" class="form-control" ng-model="give.email" required>
+                        <p ng-show="loginForm.email.$error.required && loginForm.email.$dirty" class="help-block">Email is required</p>
+                        <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+                    <!-- PASSWORD --->
+                    <div class="form-group">
+                        <label>Password<sup>*</sup></label>
+                        <input type="password" name="password" id="pass1" class="form-control" ng-model="give.password1" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required>
+                        <p ng-show="!loginForm.password.$error.required && !loginForm.password.$error.minlength && !loginForm.password.$error.maxlength && loginForm.password.$error.pattern && loginForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Show Password</label>
+                        <input type="checkbox" name="sow" ng-model="sow">
+                        <div class="wrapper" ng-if="sow" class="animate-if"> <em>{{give.password1}} </em>
+
+                        </div>
+                    </div>
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="msgalert">Submit</button>
+                    <div class="wrapper">
+                   <h3 ng-show="msgalert"><em>{{msgalert}}</em></h3>
+                  </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

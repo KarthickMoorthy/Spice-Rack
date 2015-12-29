@@ -1,0 +1,35 @@
+<div class='container' ng-controller='viewController'>
+    <div class='col-md-12' 'col-sm-12' 'col-xs-12'>
+        <div class='fill'>
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <h1>View Table reservation</h1>
+                    <p class="pull-right"><sub><b><sup>*</sup>Required fields</b></sub></p>
+                </div>
+                <!-- FORM -->
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form name="viewForm" ng-submit="submitForm(viewForm.$valid,give)" novalidate>
+                    <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label>Confirmation Code<sup>*</sup></label>
+                        <input type="number" name="confirmationcode" class="form-control" ng-model="give.confirmcode" required>
+                        <p ng-show="viewForm.confirmcode.$error.required && viewForm.confirmcode.$dirty" class="help-block">Confirmation code is required</p>
+                        
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="btn btn-primary" ng-disabled="viewForm.$invalid" ng-click="msgalert">Submit</button>
+                    <div class="wrapper">
+                   <h3 ng-show="msgalert"><em>{{msgalert}}</em></h3>
+                  </div>
+                </form>
+                <p><b>The Customer reservation will be populated here</b></p>
+                <a href='#/editbooking'><button type='button' class='btn  btn-primary'>Edit Reservation</button></a>
+                 <button type='submit' class='btn  btn-primary' ng-disabled="viewForm.$invalid" ng-click="msgalert">Cancel Reservation</button></a>
+                
+            </div>
+        </div>
+    </div>
+</div>

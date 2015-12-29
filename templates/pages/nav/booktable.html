@@ -1,0 +1,75 @@
+<div class='container' ng-controller='tableController'>
+    <div class='col-md-12' 'col-sm-12' 'col-xs-12'>
+        <div class='fill'>
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <h1>Book a table</h1>
+                    <p class="pull-right"><sub><b><sup>*</sup>Required fields</b></sub></p>
+                </div>
+                <!-- FORM -->
+                <!-- pass in the variable if our form is valid or invalid -->
+                <form name="booktableForm" ng-submit="submitForm(booktableForm.$valid,user)" novalidate>
+                    <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                     <!-- NAME -->
+                    <div class="form-group">
+                        <label>First Name<sup>*</sup></label>
+                        <input type="text" name="fname" class="form-control" ng-model="user.fname" required>
+                        <p ng-show="booktableForm.fname.$dirty && booktableForm.fname.$error.required" class="help-block">You first name is required.</p>
+                    </div>
+                    <!-- USERNAME -->
+                    <div class="form-group">
+                        <label>Last Name<sup>*</sup></label>
+                        <input type="text" name="lname" class="form-control" ng-model="user.lname" required>
+                        <p ng-show="booktableForm.lname.$dirty && booktableForm.lname.$error.required" class="help-block">You last name is required.</p>
+                    </div>
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : booktableForm.email.$invalid && booktableForm.email.$pristine }">
+                        <label>Email<sup>*</sup></label>
+                        <input type="email" name="email" class="form-control" ng-model="user.email" required>
+                        <p ng-show="booktableForm.email.$error.required && booktableForm.email.$dirty" class="help-block">Email is required</p>
+                        <p ng-show="booktableForm.email.$invalid && !booktableForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+                    <!-- Phone Number --->
+                    <div class="large-12 columns">
+                        <div class="form-group">
+                            <label>Phone Number<sup>*</sup></label>
+                            </br>
+                            <input name="primarynumber" type="number" ng-model="user.primarynumber" placeholder="Phone number....." required>
+                            <p ng-show="booktableForm.primarynumber.$dirty && booktableForm.primarynumber.$error.required" class="help-block">You priamry phone number is required.</p>
+                        </div>
+                    </div>
+                    <!-- Date -->
+                    <div class="large-6columns">
+                        <label>Date</label> 
+                        <div class="form-group">
+                            <input type="date" class="form-control" type="datetime-local" datetime="yyyy-MM-dd HH:mm:ss" ng-model="user.dt" required/>
+                        </div>
+                    </div>
+                    
+                    <!-- Time -->
+                    <div class="form-group">
+                    <label>Pick a Time between 8am and 5pm:</label>
+                    <input type="time" id="exampleInput" name="input" ng-model="user.time"
+                     placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+                    </div>    
+                    <!-- How Many People -->
+                     <div class="form-group">
+                    <label>How Many People</label>    
+                    <input type="number" name="input" class="form-control input-lg" ng-model="user.count" placeholder="Enter the number of guest" ng-min="1" ng-max="24"                                           ng-class="{'red':booktableForm.input.$invalid}"required />
+                     <p ng-show="booktableForm.count.$dirty && booktableForm.count.$error.required" class="help-block">You first name is required.</p>         
+                     <p ng-show="booktableForm.count.$error.max" class="help-block">The restaurant capacity is 24 people!.</p>     
+                    </div>     
+                    <!-- SUBMIT BUTTON -->
+                <button type="submit" class="btn btn-primary" ng-disabled="booktableForm.$invalid" ng-click="msgalert">Submit</button>
+                    <div class="wrapper">
+                   <h3 ng-show="msgalert">
+                       <pre><em>{{msgalert}}</em></pre></h3>
+                  </div>
+                </form>
+               <div class="col-xs-12" style="height:45px;"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
