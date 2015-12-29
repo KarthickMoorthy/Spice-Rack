@@ -1,0 +1,386 @@
+/*General------------------------------------------------*/
+.container{
+    padding:10px;
+}
+
+
+/* Navigation--------------------------------------------*/
+
+.navbar{
+    background-color: #fff;
+    background: radial-gradient( circle at top left ,white,#e0e2e6);
+    box-shadow: 1px 2px 2px #000;
+    border-radius: 5px;
+    width: auto;
+
+
+
+}
+.navbar a {
+    color: black;
+    font-style: italic;
+    font-size: 20px;
+}
+li{
+    padding: 9px 15px 8px;
+    font-size: 15px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover ,.nav>li>a:visited, .nav>li>a:active{
+     background-color: #c09d78;
+ }
+
+
+
+.navbar-brand:hover{
+    background-color: #e0e2e6;
+}
+.navbar-brand{
+    height:150px;
+
+
+}
+.navbar-header .glyphicon-menu-hamburger{
+    font-size:21px;
+    padding: 9px 15px 8px;
+}
+.navbar .glyphicon-list{
+    font-size:16px;
+    padding-right:5px;
+
+}
+.img-responsive{
+
+    border-radius: 4px;
+}
+/* Food Menu ----------------------------------------------*/
+.nav-tabs {
+    border-bottom: 1px solid rgb(248, 189, 8);
+}
+
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+    background-color: rgb(248, 189, 8);
+}
+
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857;
+    border: 1px solid transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin-right: 0px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: rgb(248, 189, 8);
+    cursor: default;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-left-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-color: rgb(248, 189, 8) rgb(248, 189, 8) transparent;
+    border: none;
+
+}
+
+.nav-tabs > li > a:hover {
+    border-color: rgb(248, 189, 8) rgb(248, 189, 8) rgb(248, 189, 8);
+    background-color: #fff;
+    color: rgb(248, 189, 8);
+}
+
+
+
+
+
+/* Footer ------------------------------------------------*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    background-color: #7f7f7f;
+    padding:15px;
+    margin-bottom: 200px;
+    font-family: 'Open Sans', sans-serif ;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    /* Set the fixed height of the footer here */
+    height: 245px;
+    background-color: #333;
+    color:cyan;
+    padding:10px 0;
+    margin-bottom: 15px;
+    box-shadow: 1px 2px 2px #000;
+    border-radius:5px;
+}
+
+
+
+.footer a{
+    color:#639bcf;
+}
+
+.footer a:hover{
+    color:#d8e6f3;
+}
+@media only screen and (max-width:768px){
+    body{margin-bottom: 400px;}
+    .footer{height: 440px;
+        width:95%;}
+
+}
+
+.center{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Newsletter--------------------------------------------*/
+.follow-us-container
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.follow-us
+{
+    font-size: 32px;
+    color: #777;
+}
+
+.social-icon
+{
+    padding-top: 6px;
+    font-size: 20px;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #777;
+    border-radius: 50%;
+    color: #777;
+    margin: 5px;
+}
+
+a.social-icon:hover, a.social-icon:active, a.social-icon:focus
+{
+    text-decoration: none;
+    color: #000;
+    border-color: red;
+}
+
+.newsletter .fa-rss-square{
+    font-size:64px;
+
+}
+.newsletter{
+    box-shadow: 1px 2px 2px #000;
+    background: radial-gradient( circle at bottom left,white,#e0e2e6);
+    border-radius: 5px;
+
+
+
+
+
+}
+.subscribe.btn-default:hover {
+    color: #333;
+    background-color:#c09d78;
+    border-color: #adadad;
+}
+.newsletter h3{
+    text-align: center;
+    padding:5px 5px;
+    color:black;
+    font-style: italic;
+}
+@media only screen and (max-width:768px){
+
+    .newsletter {
+        height: 250px;
+        width: 95%;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+
+}
+
+
+
+/* Content filled --------------------------------*/
+.tabspace{
+
+    padding-left: 4px;
+}
+.tile{
+    padding:20px;
+}
+.fill{
+    box-shadow: 1px 2px 2px #000;
+    background: radial-gradient( circle at top left ,white,#e0e2e6);
+    border-radius: 5px;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    border-left:dotted;
+    border-width:1px;
+    margin-top: 10px;
+
+
+
+}
+
+.fill b{
+    padding-left: 3px;
+}
+.fill h2{
+    margin:5px;
+    padding-top: 2px;
+}
+.fill h1{
+    margin:5px;
+    padding-top: 2px;
+}
+.fill h4{
+    margin:3px;
+    padding-left: 5px;
+
+}
+.fill  h3{
+    text-align: left;
+    padding:5px 5px;
+    color:black;
+    font-style: italic;
+    margin: 4px;
+}
+
+.fill p{
+    text-align: left;
+    padding-left: 2px;
+    line-height: 170%;
+    padding:5px 5px;
+    color:black;
+    font-style: normal;
+    text-indent: 40px;
+    margin: 10px;
+}
+
+.fill a{
+    color:black;
+}
+
+.fill a:hover{
+    color:cornflowerblue;
+}
+
+/* Images on the Site----------------------------------------------*/
+
+.package-brand{
+
+    height:100px;
+}
+
+.Img-brand{
+    height:200px;
+    width:200px;
+    margin: 10px;
+}
+
+.about-Img{
+    height:190px;
+    width:200px;
+    margin: 10px;
+
+}
+
+.mission-Img{
+    height:200px;
+    width:200px;
+    margin: 10px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    width:100%;
+    max-width: 1920px;
+    height: 500px;
+    margin-bottom: 60px;
+    box-shadow: 1px 2px 2px #000;
+
+
+}
+.carousel.ol{
+    width:100%;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    width:100%;
+    height: 500px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+
+}
+.jump {
+
+    background-color: #c09d78;
+    color:black;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    margin-left: 3px;
+
+
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+/* Bump up size of carousel content */
+.carousel-caption p {
+    margin-top: 10px;
+    font-size: 21px;
+    line-height: 1.3;
+    color: firebrick;
+}
+
+.carousel-caption i{
+    padding: 5px;
+    font-size:20px;
+    line-height: 1.3;
+
+}
+
+/* Book Table
+-----------------------------------------------------------------------------*/
+
+
+
+
+
